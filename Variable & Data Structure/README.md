@@ -27,3 +27,42 @@
    Classes: Custom data types created by the user.
    Object: The Object data type in Java is the parent of all classes. It can store any type of object, and all Java classes inherit from it.
    Interfaces: Used to specify what a class must do, but not how.
+
+# Input in Java
+
+-   -   -   next , nextLine , nextInt , nextLong , nextByte , nextDouble , nextFloat , nextShort , etc...
+
+-   Using Scanner class:
+-   -   Import: import java.util.Scanner;
+        Example:
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt(); // For integer input
+        String str = sc.nextLine(); // For string input
+        float f = sc.nextFloat(); // For float input
+-   Different between "import java.util.Scanner;" or "import java.util."
+
+1. import java.util.Scanner;
+   \*Imports only Scanner.
+   \*It is specific and more efficient because you are only importing the class you need.
+2. import java.util.\*;
+   \*Imports all classes in java.util
+   \*It is broader and less efficient because you are importing more than needed, even if you use just one class.
+
+# Java Important Concept:
+
+1. In Java, float can accept decimal numbers, but they must be specified as
+   float literals by adding an f or F suffix. By default, decimal numbers are treated as double, a higher-precision type, which can’t be directly assigned to float without an explicit cast or suffix.
+
+    - Example:
+
+    1. float value = 3.14f; // Explicitly declares 3.14 as a float
+    2. float value = (float) 3.14; // Casts 3.14 to a float
+
+# Type conversion
+
+-   Conversion happens in when:
+    a. type compatible
+    b. destination type > source type
+
+-   byte -> short -> int -> float -> long -> dubble
+    This conversion is One directional
