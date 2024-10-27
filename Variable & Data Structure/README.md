@@ -66,3 +66,14 @@
 
 -   byte -> short -> int -> float -> long -> dubble
     This conversion is One directional
+
+# Type Promotion in Expression
+
+-   Rules:
+
+    1. All byte, short, and char values are promoted to int in arithmetic expressions.
+
+    2. If an operand is long, the whole expression is promoted to long.
+
+    3. If one operand is float, the expression is promoted to float.
+    4. If one operand is double, the expression is promoted to double.
