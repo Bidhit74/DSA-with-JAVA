@@ -77,3 +77,11 @@
 
     3. If one operand is float, the expression is promoted to float.
     4. If one operand is double, the expression is promoted to double.
+
+# Type Casting in Java:
+
+Type casting is converting one data type into another. It can be implicit (automatic conversion, smaller to larger type) or explicit (manual conversion, larger to smaller type - Data loss may occur.).
+
+-   Example:
+    double num = 10;
+    int result = (int) num; // Explicit casting from double to int
