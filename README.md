@@ -9,3 +9,4 @@ Hello My Name : Bidhit Chaudhary
 5.  -   Patterns( Part I)
 6.  -   Function & Methods
 7.  -   Advanced Patterns( Part II)
+8.  -   Arrays
