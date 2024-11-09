@@ -40,3 +40,18 @@ System.out.println(arr[1]); // Output: 50
     In Java, both modifyArray(int[] arr) and modifyArray(int arr[]) are valid and mean the same. The only difference is the syntax:
     I. int[] arr is preferred for better readability.
     II. int arr[] is an older style but works the same.
+
+# Linear Search
+
+    public static int linearSearch(int[] arr, int key) {
+        for (int i = 0; i < arr.length; i++) {
+            if (key == arr[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+-   Best Case TC: O(1)
+-   Worst Case TC: O(n)
+-   Space Complexity (for both cases): O(1)
