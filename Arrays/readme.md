@@ -30,3 +30,13 @@ System.out.println(arr[i]); // Output: 10 20 30
 
 arr[1] = 50; // Update element at index 1
 System.out.println(arr[1]); // Output: 50
+
+# Arrays as Function/Method Argument.
+
+-   In Java, when an array is passed to a method, a copy of the reference is passed, so changes made within the method affect the original array.
+    public static void modifyArray(int arr[] ) {
+    arr[0] = 100; // Changes the original array }
+
+    In Java, both modifyArray(int[] arr) and modifyArray(int arr[]) are valid and mean the same. The only difference is the syntax:
+    I. int[] arr is preferred for better readability.
+    II. int arr[] is an older style but works the same.
