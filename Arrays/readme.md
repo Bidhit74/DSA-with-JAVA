@@ -55,3 +55,52 @@ System.out.println(arr[1]); // Output: 50
 -   Best Case TC: O(1)
 -   Worst Case TC: O(n)
 -   Space Complexity (for both cases): O(1)
+
+# Binary Search
+
+    public static int binarySearch(int[] arr,int search) {
+        int start = 0, end = arr.length - 1;
+        while (start <= end) {
+            int mid = start + (end-start) / 2;
+            if (arr[mid] == search) {
+                return mid;
+            } else if (arr[mid] < search) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+-   O(log n) better than O(n) // Binary search better than linear search
+
+# Reverse Array - Less Efficient
+
+    public static int[] reverseArray(int[] arr) {
+        int[] reverse = new int[arr.length];
+        for (int i = 0; i < reverse.length; i++) {
+            int index = arr.length - i - 1;
+            reverse[i] = arr[index];
+        }
+        System.out.println();
+        return reverse;
+    }
+
+-   Time Complexity: O(n)  Space Complexity : O(n)  Less Efficient
+
+# Reverse Array - More Efficient
+
+    public static void reverseArray(int[] arr) {
+        int start = 0, end = arr.length - 1;
+        while (start < end) {
+            // Using swaping method  // in-place reversal
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+-   Time Complexity: O(n)  Space Complexity : O(1)  More Efficient
