@@ -33,3 +33,14 @@
 
 3.  -   compareTo(String another): Compares two strings lexicographically (alphabetically). Returns negative, zero, or positive values.
         System.out.println("abc".compareTo("abd")); // -1
+
+# Searching
+
+1.  -   indexOf(String str): Finds the first occurrence of a string.
+        System.out.println("hello".indexOf("l")); // 2
+
+2.  -   lastIndexOf(String str): Finds the last occurrence of a string.
+        System.out.println("hello".lastIndexOf("l")); // 3
+
+3.  -   contains(CharSequence s): Checks if a string contains another string.
+        System.out.println("hello".contains("ell")); // true
