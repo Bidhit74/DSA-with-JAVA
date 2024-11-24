@@ -57,3 +57,29 @@
         System.out.println(" hello ".trim()); // "hello"
 
 # Newer methods like strip(), isBlank(), etc., are introduced in Java 11.
+
+# Utility Methods
+
+1.  -   split(String regex): Splits a string into an array based on a regex.
+2.  -   split(String regex, int limit): Splits with a limit on the number of substrings.
+        If limit > 0: Returns at most limit substrings.
+        If limit = 0: Removes trailing empty strings but splits all others.
+        If limit < 0: Splits all possible substrings without removing any.
+        String[] parts = "a,b,c".split(",");
+
+3.  -   toCharArray(): Converts a string into a character array.
+        char[] chars = "hello".toCharArray();
+
+4.  -   isEmpty(): Checks if a string is empty.
+        System.out.println("".isEmpty()); // true
+
+5.  -   isBlank(): Checks if the string is blank (ignores whitespace).
+        String str3 = " ";
+        System.out.println("IsBlank: " + str3.isBlank()); // true
+
+6.  -   concat(String str): Concatenates the specified string.
+        String str2 = "apple";
+        System.out.println(str2.concat(" pie")); // "apple pie"
+
+7.  -   String.join(CharSequence delimiter, String... elements): Joins multiple strings using a specified delimiter.
+        System.out.println (String.join(", ", "apple", "banana", "cherry")); // "apple, banana, cherry"
