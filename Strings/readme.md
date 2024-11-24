@@ -19,6 +19,17 @@
 
 # Case Conversion
 
-1.  - toUpperCase(): Converts all characters to uppercase.
-2.  - toLowerCase(): Converts all characters to lowercase.
-      System.out.println(str.toUpperCase()); // "HELLO"
+1.  -   toUpperCase(): Converts all characters to uppercase.
+2.  -   toLowerCase(): Converts all characters to lowercase.
+        System.out.println(str.toUpperCase()); // "HELLO"
+
+# Comparison
+
+1.  -   equals(String another): Checks if two strings are equal.
+        System.out.println("abc".equals("abc")); // true
+
+2.  -   equalsIgnoreCase(String another): Compares strings ignoring case.
+        System.out.println("abc".equalsIgnoreCase("ABC")); // true
+
+3.  -   compareTo(String another): Compares two strings lexicographically (alphabetically). Returns negative, zero, or positive values.
+        System.out.println("abc".compareTo("abd")); // -1
