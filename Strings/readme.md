@@ -44,3 +44,16 @@
 
 3.  -   contains(CharSequence s): Checks if a string contains another string.
         System.out.println("hello".contains("ell")); // true
+
+# Modifying Strings
+
+1.  -   replace(char oldChar, char newChar): Replaces all occurrences of a character.
+2.  -   replaceAll(String regex, String replacement): Replaces using regex.
+3.  -   replaceFirst(String regex, String replacement): Replaces the first match using regex.
+        System.out.println("java".replace('a', 'o')); // "jovo"
+
+4.  -   trim(): Removes leading and trailing spaces.
+5.  -   strip(): Removes leading and trailing spaces (Unicode-aware). Unlike trim(), it also removes Unicode spaces.
+        System.out.println(" hello ".trim()); // "hello"
+
+# Newer methods like strip(), isBlank(), etc., are introduced in Java 11.
