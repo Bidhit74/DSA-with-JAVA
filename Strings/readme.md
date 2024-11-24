@@ -16,3 +16,9 @@
 
 4.  -   substring(int startIndex, int endIndex): Extracts part of the string.
         System.out.println(str.substring(1, 4)); // "ell"
+
+# Case Conversion
+
+1.  - toUpperCase(): Converts all characters to uppercase.
+2.  - toLowerCase(): Converts all characters to lowercase.
+      System.out.println(str.toUpperCase()); // "HELLO"
