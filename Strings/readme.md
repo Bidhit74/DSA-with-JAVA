@@ -83,3 +83,67 @@
 
 7.  -   String.join(CharSequence delimiter, String... elements): Joins multiple strings using a specified delimiter.
         System.out.println (String.join(", ", "apple", "banana", "cherry")); // "apple, banana, cherry"
+
+# intern():
+
+-   Helps save memory by reusing identical string values in the String Pool.
+
+-   -   intern(); - usage:
+        String str1 = new String("hello");
+        String str2 = "hello";
+        String str3 = str1.intern();
+
+        System.out.println(str1 == str2); // false (different references)
+        System.out.println(str2 == str3); // true (same reference from String Pool)
+
+-   Time Complexity: The intern() method has a time complexity of O(1) on average for checking the string pool.
+
+# StringBuffer:
+
+-   StringBuffer is a mutable sequence of characters. It allows modifications to a string without creating a new string object, making it more efficient than String for frequent modifications.
+
+1. Key Features:
+
+    1. Mutability: Unlike String, which is immutable, StringBuffer objects can be modified.
+
+    2. Performance: It is more efficient than String when performing multiple modifications (like append(), insert(), etc.), because it doesn't create a new object every time.
+
+    3. Thread-Safety: StringBuffer is synchronized, meaning it is thread-safe. However, if thread-safety is not required, StringBuilder (which is not synchronized) can be used for better performance.
+
+-   Provides a mutable, efficient way to modify strings, especially for cases requiring frequent modifications.
+
+-   -   Usage :
+        StringBuffer sb = new StringBuffer("Hello");
+        sb.append(" World");
+        System.out.println(sb); // Output: "Hello World"
+
+1. Time Complexity:
+   The time complexity for common operations is:
+   append() → O(1) (amortized)
+   insert() → O(n)
+   delete() → O(n)
+   reverse() → O(n)
+
+-   These operations are much faster compared to creating new String objects due to StringBuffer's mutability.
+
+# StringBuffer vs StringBuilder (In Short):
+
+1.  Thread Safety:
+
+    1. StringBuffer: Thread-safe (synchronized).
+
+    2. StringBuilder: Not thread-safe (not synchronized).
+
+2.  Performance:
+
+    1.  StringBuffer: Slower due to synchronization overhead.
+
+    2.  StringBuilder: Faster in single-threaded applications.
+
+3.  Usage:
+
+    1. StringBuffer: Use when thread safety is needed.
+
+    2. StringBuilder: Use when thread safety is not needed for better performance.
+
+4.  Methods: Both have the same methods (e.g., append(), insert(), etc.).
