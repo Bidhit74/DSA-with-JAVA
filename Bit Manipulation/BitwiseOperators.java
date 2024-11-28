@@ -36,10 +36,14 @@ public class BitwiseOperators {
     // 1111...010 --> one's complement --> 0000...101 + 1 --> 0000...110 --> (6) But MSB(Negative) than answer is (-6)
 
     // Binary Leff Shift (<<)
-    // Q :- 5 << 2   00000…101 Left shift (<<)  = 000..10100    16
+    // Q :- 5 << 2  --> 00000…101 Left shift (<<)  = 000..10100  -->  16
 	// Formula :-   a  <<  b  =  a *  2b 
-	// 5 << 2  =  5 * 22  = 5 * 4 = 20 
+    // 5 << 2  =  5 * 22  = 5 * 4 = 20 
 
+    // Binary Right shift (>>) : 
+    // Q :- 6 >> 1  --> 000…110 Right shift (>>)  = 00000..11  -->  3
+	// Formula :-   a  >>  b  =  a / 2b 
+	// 6 >> 1  =  6/21  = 6 /2 = 3 
 
     public static void main(String[] args) {
         System.out.println(5 & 6); // Output is 4.
@@ -49,5 +53,7 @@ public class BitwiseOperators {
         System.out.println(~0); // Output is -6.
         System.out.println(5 << 2); // Output is 20.
         System.out.println(5 << 5); // Output is 160.
+        System.out.println(6 >> 1); // Output is 3.
+        System.out.println(5 >> 2); // Output is 1.
     }
 }
