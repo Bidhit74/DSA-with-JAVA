@@ -9,15 +9,24 @@ public class ith_OperationsGetSetClear {
         int bitMask = 1 << i;
         if ((n & bitMask) == 0) {
             return 0;
-        }
-        else {
+        } else {
             return 1;
         }
     }
-        
+    
+    // Set ith Bit = mean set ith bit = 1;
+    // Example : 8 = 1000 --> Set 2th Bit = 1100 --> ans = 12
+    // Logic :- N OR(|) (1<<i)
+    public static int setIthBit(int n, int i) {
+        int bitMask = 1 << i;
+        return (n | bitMask);
+    }
+
     public static void main(String[] args) {
-        int n = 8;
+        int n = 7;
         int i = 2;
-        System.out.println(n + " " + i + "th bit position = " + getIthBit(n, i));
+        System.out.println(n + " " + i + "th bit get position = " + getIthBit(n, i));
+        System.out.println(10 + " " + 2 + "th bit set position = " + setIthBit(16, 3));
+        System.out.println(10 + " " + 2 + "th bit set position = " + setIthBit(8, 2));
     }
 }
