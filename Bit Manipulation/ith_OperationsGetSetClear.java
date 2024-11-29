@@ -22,11 +22,20 @@ public class ith_OperationsGetSetClear {
         return (n | bitMask);
     }
 
+    // Clear ith Bit = mean set ith bit = 0;
+    // Example : 12 = 1100 --> Set 2th Bit = 1000 --> ans = 8
+    // Logic :- N AND(&) NOT(~)(1<<i)
+    public static int clearIthBit(int n, int i) {
+        int bitMask = ~(1 << i);
+        return (n & bitMask);
+    }
+
     public static void main(String[] args) {
         int n = 7;
         int i = 2;
         System.out.println(n + " " + i + "th bit get position = " + getIthBit(n, i));
         System.out.println(10 + " " + 2 + "th bit set position = " + setIthBit(16, 3));
         System.out.println(10 + " " + 2 + "th bit set position = " + setIthBit(8, 2));
+        System.out.println(12 + " " + 2 + "th bit clear position = " + clearIthBit(12, 2));
     }
 }
