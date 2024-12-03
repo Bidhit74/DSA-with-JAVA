@@ -5,3 +5,8 @@
 -   protected -- ✔ -- ✔ -- ✔ -- ✘ (only via inheritance)
 -   default -- ✔ -- ✔ -- ✘ -- -- ✘
 -   private -- ✔ -- ✘ -- ✘ -- ✘
+
+-   public: Access from anywhere.
+-   protected: Access within package + subclasses.
+-   default: Access within the same package.
+-   private: Access only within the class.
