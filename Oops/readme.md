@@ -1,3 +1,7 @@
+# Encapsulation:
+
+-   Wrapping data (fields) and methods (functions) in a single unit (class) and using access modifiers (private, public) to protect data. It also implements data hiding.
+
 # Types of Access Modifiers:
 
 -   Modifier -- Class -- Package -- Subclass -- World (Other Packages)
@@ -42,3 +46,7 @@
 
     - Achieved when a subclass provides a specific implementation of a method already defined in its parent class.
     - Resolved during runtime using dynamic method dispatch.
+
+# Abstraction:
+
+-   Hiding implementation details using abstract classes (abstract keyword) or interfaces.
