@@ -30,3 +30,15 @@
 3.  -   Hierarchical Inheritance is a type of inheritance in Java where multiple subclasses inherit from a single parent class.
 
 4.  -   Hybrid Inheritance is a combination of two or more types of inheritance in Java. Since Java does not support multiple inheritance directly (to avoid ambiguity), hybrid inheritance can only be achieved using a combination of classes and interfaces.
+
+# Polymorphism
+
+1. Compile Time Polymorphism ( Method Overloading )
+
+    - Achieved when multiple methods in the same class share the same name but differ in the number or type of parameters.
+    - Resolved during compile time.
+
+2. Run Time Polymorphism ( Method Overriding )
+
+    - Achieved when a subclass provides a specific implementation of a method already defined in its parent class.
+    - Resolved during runtime using dynamic method dispatch.
