@@ -50,3 +50,18 @@
 # Abstraction:
 
 -   Hiding implementation details using abstract classes (abstract keyword) or interfaces.
+
+1. Abstract Class
+
+-   -   Cannot create an instance/object of abstract class.
+-   -   Can have abstraction – abstract methods.
+-   -   Can have constructors
+
+2. Interfaces
+
+-   -   Interface is a blueprint of a class.
+-   -   Interfaces are used to achieve multiple inheritance in Java.
+-   -   Interface is used to achieve total abstraction.
+-   -   All method are public, abstract & without implementation.
+-   -   Variables in the interface are final, public and static.
+-   -   Interfaces are implemented using the implements keyword
