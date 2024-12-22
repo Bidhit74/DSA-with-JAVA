@@ -24,4 +24,7 @@
     Creating a new class (child) that inherits properties and methods from an existing class (parent) using the extends keyword.
 
 1.  -   Single Level Inheritance, a class inherits from a single parent class, reusing its properties and methods.
+
 2.  -   Multi-Level Inheritance: A class inherits from another class, which in turn inherits from a third class, forming a chain.
+
+3.  -   Hierarchical Inheritance is a type of inheritance in Java where multiple subclasses inherit from a single parent class.
