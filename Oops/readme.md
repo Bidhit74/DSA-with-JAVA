@@ -28,3 +28,5 @@
 2.  -   Multi-Level Inheritance: A class inherits from another class, which in turn inherits from a third class, forming a chain.
 
 3.  -   Hierarchical Inheritance is a type of inheritance in Java where multiple subclasses inherit from a single parent class.
+
+4.  -   Hybrid Inheritance is a combination of two or more types of inheritance in Java. Since Java does not support multiple inheritance directly (to avoid ambiguity), hybrid inheritance can only be achieved using a combination of classes and interfaces.
