@@ -14,6 +14,7 @@ public class PrintXPowerN {
         return x * XPowerN(x, n - 1);
     }
     public static void main(String[] args) {
-        System.out.println(XPowerN(5, 5));
+        System.out.println(XPowerN(75, 2)); // 5625
+        System.out.println(XPowerN(99, 2)); // 9801
     }
 }
