@@ -1,5 +1,5 @@
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+// import java.io.FileReader;
 // import java.io.IOException;
 
 public class CheckedException {
@@ -23,6 +23,6 @@ public class CheckedException {
         method1();
     }
     public static void method1() throws FileNotFoundException {
-        FileReader file = new FileReader("a.text");
+        // FileReader file = new FileReader("a.text");
     }
 }
