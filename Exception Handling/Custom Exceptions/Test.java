@@ -6,6 +6,7 @@ public class Test {
             System.out.println("Withdraw successful");
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            
         }
     }
 }
@@ -19,7 +20,7 @@ class BankAccount {
 
     public void withdraw(double amount) throws Exception {
         if (amount > balance) {
-            throw new InsufficientFund();
+            throw new InsufficientFund(amount);
         }
         balance -= amount;
     }
@@ -28,8 +29,15 @@ class BankAccount {
 
 
 class InsufficientFund extends Exception {
-    public InsufficientFund() {
+    private double amount;
+
+    public InsufficientFund(double amount) {
         super("Insufficient balance cannot withdraw");
+        this.amount = amount;
+    }
+    
+    public double getAmount() {
+        return amount;
     }
     
 }
