@@ -17,3 +17,7 @@ Hello My Name : Bidhit Chaudhary
 13. -   Object Oriented Programming(Oops)
 14. -   Recursion
 15. -   Inner Classes
+16. -   Package in Java
+17. -   Exception Handling
+18. -   File Handling
+19. -   Divide and Conquer
