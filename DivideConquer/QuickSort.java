@@ -8,8 +8,8 @@ public class QuickSort {
     
 
     //? (Best and Average Case) --> Time Complexity: O(n log n) and Space Complexity: O(log n)
-    //? (Wrost Case) --> Time Complexity: O(n^2) and Space Complexity: O(n)
-    //? Wrost case occurs when pivot is always the smallest or largest element.
+    //? (Worst Case) --> Time Complexity: O(n^2) and Space Complexity: O(n)
+    //? Worst case occurs when pivot is always the smallest or largest element.
     //? worst case (already sorted or reverse sorted array)
     // QuickSort Algorithm 
     public static void quickSort(int[] arr, int sIdx, int eIdx) {
