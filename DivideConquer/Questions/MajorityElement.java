@@ -18,6 +18,7 @@ public class MajorityElement {
     // Approach 1: Brute Force Approach
     // Time Complexity: O(n^2)
     //Idea : Count the number of times each element occurs in the array and find the largest count.
+    /* 
     public static int majorityElement(int[] nums) {
         int n = nums.length;
         int majorityCount = n / 2;
@@ -34,8 +35,54 @@ public class MajorityElement {
         }
         return -1;
     }
+        */
+    
+    // Approach 2: Divide & Conquer
+    // Time Complexity: O(n log n)
+    //Idea : if we know the majority element in the left and right halves of an array, we can determine which is the global majority element linear time.
+
+    // Counts occurrences of a given number in the specified range of the array
+    private static int countInRange(int[] nums, int num, int min, int max) {
+        int count = 0;
+        for (int i = min; i <= max; i++) {
+            if (nums[i] == num) {
+                count++;
+            }
+        }
+    return count;
+    }
+
+// Recursively finds the majority element in the given range using the Divide and Conquer approach
+    public static int majorityElement(int[] nums, int min, int max) {
+        // Base case: If there is only one element, return it as the majority
+        if (min == max) {
+            return nums[min];
+        }
+        
+        // Divide: Find the middle index
+        int mid = min + (max - min) / 2;
+        
+        // Recursively find the majority element in left and right halves
+        int left = majorityElement(nums, min, mid);
+        int right = majorityElement(nums, mid + 1, max);
+    
+        // If both halves return the same element, it's the majority element
+        if (left == right) {
+            return left;
+        }
+    
+        // Count occurrences of both elements in the current range
+        int leftCount = countInRange(nums, left, min, max);
+        int rightCount = countInRange(nums, right, min, max);
+    
+        // Return the element that appears more frequently
+        return leftCount > rightCount ? left : right;
+    }
+
+
     public static void main(String[] args) {
         int[] nums = {3,2,3};
-        System.out.println(majorityElement(nums));
+        // System.out.println(majorityElement(nums));
+        System.out.println(majorityElement(nums, 0, nums.length - 1));
     }
 }
