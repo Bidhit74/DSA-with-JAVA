@@ -33,7 +33,51 @@ public class InversionCount {
         return inversion;
     }
     
-    
+    // Optimal Approach
+    //Time Complexity O(n log n) and space complexity O(n)
+
+    public static int merge(int[] arr, int sIdx, int mid, int eIdx) {
+        int[] tempArr = new int[eIdx - sIdx + 1];
+        int i = sIdx, j = mid, k = 0, invCount = 0;
+
+        while ((i < mid) && (j <= eIdx)) {
+            if (arr[i] <= arr[j]) {
+                tempArr[k++] = arr[i++];
+            } else {
+                tempArr[k++] = arr[j++];
+                invCount += (mid - i);
+            }
+        }
+        
+        while (i < mid) {
+            tempArr[k++] = arr[i++];
+        }
+        while (j<=eIdx) {
+            tempArr[k++] = arr[j++];
+        }
+
+        // Copy temporary array into original array.
+        for (k = 0, i = sIdx; k < tempArr.length; k++, i++) {
+            arr[i] = tempArr[k];
+        }
+        return invCount;
+    }
+
+    public static int mergeSort(int[] arr, int sIdx, int eIdx) {
+        int invCount = 0;
+        if (sIdx < eIdx) {
+            int mid = sIdx + (eIdx - sIdx) / 2;
+            invCount += mergeSort(arr, sIdx, mid); // Left part
+            invCount += mergeSort(arr, mid + 1, eIdx); // Right part
+            invCount += merge(arr, sIdx, mid + 1, eIdx); // merge left and right parts
+        }
+        return invCount;
+    }
+
+    public static int getInversionCount(int[] arr) {
+        int n = arr.length;
+        return mergeSort(arr, 0, n - 1);
+    }
 
     public static void main(String[] args) {
         int[] arr = { 2, 4, 1, 3, 5 };
@@ -43,6 +87,8 @@ public class InversionCount {
         System.out.println(inversionCount(arr1));
         System.out.println(inversionCount(arr2));
 
-
+        System.out.println(getInversionCount(arr));
+        System.out.println(getInversionCount(arr1));
+        System.out.println(getInversionCount(arr2));
     }
 }
