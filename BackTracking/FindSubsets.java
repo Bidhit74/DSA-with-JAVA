@@ -4,6 +4,8 @@
 
 public class FindSubsets {
 
+    //Time Complexity: O(2^n * n).
+    //Space Complexity: O(n).
     public static void findSubset(String str, String ans, int idx) {
         // Base case:
         if (idx == str.length()) {
