@@ -4,10 +4,14 @@ public class NQueens {
 
     // Time Complexity : O(n!)
     // Recurrence Relation Time Complexity : T(n) = n * T(n - 1) + isSafe()
+
+    // Count Way 
+    static int count = 0;
     public static void nQueens(char[][] board, int row) {
         //Base Case
         if (row == board.length) {
             printChessboard(board);
+            count++;
             return;
         }
         // column wise loop
@@ -62,5 +66,6 @@ public class NQueens {
         }
 
         nQueens(board, 0);
+        System.out.println("Total Way : " + count);
     }
 }
