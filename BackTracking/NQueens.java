@@ -2,6 +2,8 @@
 
 public class NQueens {
 
+    // Time Complexity : O(n!)
+    // Recurrence Relation Time Complexity : T(n) = n * T(n - 1) + isSafe()
     public static void nQueens(char[][] board, int row) {
         //Base Case
         if (row == board.length) {
