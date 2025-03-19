@@ -3,11 +3,13 @@
 
 //A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class KeypadCombinations {
     
-    private static final String[] Keypad = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
-
+    // private static final String[] Keypad = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+    /* 
     // Time Complexity : O(4^n) : exponential 
     // Space Complexity : O(n^2)
     public static void keypadCombinations(String digit, int idx, String temp) {
@@ -23,7 +25,6 @@ public class KeypadCombinations {
             keypadCombinations(digit, idx + 1, temp + str.charAt(i));
         }
     }
-    
     // Time Complexity : O(4^n) : exponential 
     // Space Complexity : O(n)
     public static void generateCombinations(String digit, int idx, StringBuilder temp) {
@@ -32,7 +33,7 @@ public class KeypadCombinations {
             System.out.print(temp + " ");
             return;
         }
-
+    
         // Recursion
         int id = digit.charAt(idx) - '0';
         String str = Keypad[id];
@@ -42,14 +43,31 @@ public class KeypadCombinations {
             temp.deleteCharAt(temp.length() - 1); // Backtracking 
         }
     }
-    public static void main(String[] args) {
-        String digit = "23";
-        if (!digit.isEmpty()) {
-            keypadCombinations(digit, 0, "");
-            System.out.println();
-            generateCombinations(digit, 0, new StringBuilder());
-        } else {
-            System.out.println("No input provided!");
+        */
+    private static final String[] KEYPAD = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+    public static void keypadCombinations(String digit, int idx, StringBuilder temp, List<String> result) {
+        // Base Case
+        if (idx == digit.length()) {
+            result.add(temp.toString()); // Add completed combination
+            return;
         }
+
+        // Get the corresponding characters for the current digit
+        String str = KEYPAD[digit.charAt(idx) - '0'];
+        for (char ch : str.toCharArray()) {
+            temp.append(ch);  // Append character
+            keypadCombinations(digit, idx + 1, temp, result); // Recursive call
+            temp.deleteCharAt(temp.length() - 1); // **Backtracking step** (removes last character)
+        }
+    }
+
+    public static List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<>();
+        if (digits.isEmpty()) return result; // Handle empty input
+        keypadCombinations(digits, 0, new StringBuilder(), result);
+        return result;
+    }
+    public static void main(String[] args) {
+        System.out.println(letterCombinations("23"));
     }
 }
