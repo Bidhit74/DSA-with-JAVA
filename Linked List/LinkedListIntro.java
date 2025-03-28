@@ -67,17 +67,34 @@ public class LinkedListIntro {
         }
         // i = index - 1, temp = previous
         newNode.next = temp.next;
-        temp.next = newNode; 
+        temp.next = newNode;
+    }
+    
+    // Time complexity : O(1)
+    public int removeFirst() {
+        if (size == 0) {
+            System.out.println("List is empty");
+            return -1;
+        }
+        else if (size == 1) {
+            int data = head.data;
+            head = tail = null;
+            size = 0;
+            return data;
+        }
+        int data = head.data;
+        head = head.next;
+        size--;
+        return data;
     }
     public static void main(String[] args) {
         LinkedListIntro l1 = new LinkedListIntro();
-        l1.addFirst(1);
-        l1.addFirst(2);
-        l1.addLast(3);
-        l1.addAtMiddle(0, 5);
-        l1.addAtMiddle(2, 8);
-        l1.printLinkedList();
+        // l1.addFirst(1);
+        l1.addFirst(5);
+        System.out.println(LinkedListIntro.size);
+        System.out.println("Removed element: " + l1.removeFirst());
         // System.out.println(l1.size);
+        l1.printLinkedList();
         System.out.println(LinkedListIntro.size);
     }
 }
