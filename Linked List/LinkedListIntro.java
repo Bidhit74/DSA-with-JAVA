@@ -3,7 +3,6 @@ public class LinkedListIntro {
     public static class Node {
         int data;
         Node next;
-
         Node(int data) {
             this.data = data;
             this.next = null;
@@ -26,7 +25,6 @@ public class LinkedListIntro {
         // Step 3: head is now the new node
         head = newNode;
     }
-
     // Time complexity: O(1)
     public void addLast(int data) {
         // Step 1: Create a new node
@@ -40,8 +38,7 @@ public class LinkedListIntro {
         // Step 3: Update the tail to the new node
         tail = newNode;
     }
-
-    // 
+    // Time Complexity : O(n)
     public void printLinkedList() {
         Node temp = head;
         while (temp != null) {
@@ -51,16 +48,32 @@ public class LinkedListIntro {
         System.out.println("null");
     }
 
+    // Add in the Middle index
+    // Time Complexity : O(n)
+    public void addAtMiddle(int index, int data) {
+        Node newNode = new Node(data);
+        if (index == 0) {
+            addFirst(data);
+            return;
+        }
+        Node temp = head;
+        int i = 0;
+        while (i < index - 1) {
+            temp = temp.next;
+            i++;
+        }
+        // i = index - 1, temp = previous
+        newNode.next = temp.next;
+        temp.next = newNode; 
+    }
+
     public static void main(String[] args) {
         LinkedListIntro l1 = new LinkedListIntro();
-        l1.printLinkedList();
         l1.addFirst(1);
-        l1.printLinkedList();
         l1.addFirst(2);
-        l1.printLinkedList();
         l1.addLast(3);
-        l1.printLinkedList();
-        l1.addLast(4);
+        l1.addAtMiddle(0, 5);
+        l1.addAtMiddle(2, 8);
         l1.printLinkedList(); 
     }
 }
