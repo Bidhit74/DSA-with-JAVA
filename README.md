@@ -23,3 +23,4 @@ Hello My Name : Bidhit Chaudhary
 19. -   Divide and Conquer
 20. -   Backtracking
 21. -   ArrayList
+22. -   Linked List
