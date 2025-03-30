@@ -1,5 +1,4 @@
 public class LinkedListIntro {
-
     public static class Node {
         int data;
         Node next;
@@ -75,8 +74,7 @@ public class LinkedListIntro {
         if (size == 0) {
             System.out.println("List is empty");
             return -1;
-        }
-        else if (size == 1) {
+        } else if (size == 1) {
             int data = head.data;
             head = tail = null;
             size = 0;
@@ -87,13 +85,44 @@ public class LinkedListIntro {
         size--;
         return data;
     }
+    
+    // Time complexity : O(n)
+    public int removeLast() {
+        if (size == 0) {
+            System.out.println("List is empty");
+            return -1;
+        } else if (size == 1) {
+            int val = tail.data;
+            head = tail = null;
+            size--;
+            return val;
+        }
+        Node prev = head;
+        for (int i = 0; i < size - 2; i++) {
+            prev = prev.next;
+        }
+        // last tail index previous index = prev
+        int val = prev.next.data; // tail.data
+        prev.next = null;
+        tail = prev;
+        size--;
+        return val;
+    }
+
     public static void main(String[] args) {
         LinkedListIntro l1 = new LinkedListIntro();
         // l1.addFirst(1);
         l1.addFirst(5);
+        l1.addFirst(2);
+        l1.addFirst(3);
+        l1.addFirst(4);
         System.out.println(LinkedListIntro.size);
+        l1.printLinkedList();
         System.out.println("Removed element: " + l1.removeFirst());
         // System.out.println(l1.size);
+        l1.printLinkedList();
+        System.out.println(LinkedListIntro.size);
+        System.out.println("Removed element: " + l1.removeLast());
         l1.printLinkedList();
         System.out.println(LinkedListIntro.size);
     }
