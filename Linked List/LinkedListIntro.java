@@ -122,6 +122,25 @@ public class LinkedListIntro {
         //key not found
         return -1;
     }
+
+    // Time complexity and Space Complexity: O(n)
+    public int recSearchHelper(Node head, int key) { 
+        if (head == null) {
+            return -1;
+        }
+        if (head.data == key) {
+            return 0;
+        }
+        int idx = recSearchHelper(head.next, key);
+        if (idx == -1) { // key not found
+            return -1;
+        }
+        // key found
+        return idx + 1;
+    }
+    public int recSearch(int key) {
+        return recSearchHelper(head, key);
+    }
     public static void main(String[] args) {
         LinkedListIntro l1 = new LinkedListIntro();
         // l1.addFirst(1);
@@ -132,5 +151,7 @@ public class LinkedListIntro {
         l1.addFirst(1);
         l1.printLinkedList();
         System.out.println(l1.itrSearch(6)); 
+        System.out.println(l1.recSearch(6)); 
+        System.out.println(l1.recSearch(5)); 
     }
 }
