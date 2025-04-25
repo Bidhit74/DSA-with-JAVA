@@ -71,6 +71,21 @@ public class DoublyLL {
             newNode.prev = tail;
             tail = newNode;
         }
+
+        // Remove Last Element
+        public void removeLast() {
+            if (size == 0 || head == null) {
+                System.out.println("Doubly Linked List is Empty.");
+                return;
+            } else if (size == 1) {
+                head = tail = null;
+                size--;
+                return;
+            }
+            tail = tail.prev;
+            tail.next = null;
+            size--;
+        }
         
     public static void main(String[] args) {
         DoublyLL dll = new DoublyLL();
@@ -79,14 +94,15 @@ public class DoublyLL {
         dll.addFirst(3);
         dll.addFirst(2);
         dll.addFirst(1);
-        System.out.println(size);
         dll.print();
+        System.out.println(size);
         dll.addLast(6);
-        System.out.println(size);
-        dll.removeFirst();
         dll.print();
-        dll.addLast(7);
         System.out.println(size);
+        dll.removeLast();
         dll.print();
+        System.out.println(size);
+        
+        
     }
 }
