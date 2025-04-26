@@ -86,6 +86,23 @@ public class DoublyLL {
             tail.next = null;
             size--;
         }
+
+        // Reverse DoublyLL
+        public void reverseDll() {
+            Node curr = head;
+            Node prev = null;
+            Node next;
+
+            while (curr != null) {
+                next = curr.next;
+                curr.next = prev;
+                curr.prev = next;
+
+                prev = curr;
+                curr = next;
+            }
+            head = prev;
+        }
         
     public static void main(String[] args) {
         DoublyLL dll = new DoublyLL();
@@ -94,14 +111,18 @@ public class DoublyLL {
         dll.addFirst(3);
         dll.addFirst(2);
         dll.addFirst(1);
+        // dll.print();
+        // System.out.println(size);
+        // dll.addLast(6);
+        // dll.print();
+        // System.out.println(size);
+        // dll.removeLast();
+        // dll.print();
+        // System.out.println(size);
+
         dll.print();
-        System.out.println(size);
-        dll.addLast(6);
+        dll.reverseDll();
         dll.print();
-        System.out.println(size);
-        dll.removeLast();
-        dll.print();
-        System.out.println(size);
         
         
     }
